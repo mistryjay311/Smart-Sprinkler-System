@@ -1,0 +1,1 @@
+[{"id":"28efad47.3be902","type":"switch","z":"eaa74b1b.8f1fc8","name":"Motor Conn","property":"payload","propertyType":"msg","rules":[{"t":"lte","v":"35","vt":"str"},{"t":"gt","v":"36","vt":"str"}],"checkall":"true","repair":false,"outputs":2,"x":350,"y":340,"wires":[["4635dde4.142054"],["3e2defa1.fc87f"]]}]
