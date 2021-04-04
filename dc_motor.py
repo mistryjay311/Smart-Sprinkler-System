@@ -1,0 +1,4 @@
+Python 3.9.1 (v3.9.1:1e5d33e9b9, Dec  7 2020, 12:10:52) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> import RPi.GPIO as GPIOfrom time import sleepMotor1A = 24Motor1B = 23Motor1E = 25 def setup():	GPIO.setmode(GPIO.BCM)				 Numbering	GPIO.setup(Motor1A,GPIO.OUT)  	GPIO.setup(Motor1B,GPIO.OUT)	GPIO.setup(Motor1E,GPIO.OUT) def loop():	GPIO.output(Motor1A,GPIO.HIGH)	GPIO.output(Motor1B,GPIO.LOW)	GPIO.output(Motor1E,GPIO.HIGH) 	sleep(5)	GPIO.output(Motor1A,GPIO.LOW)	GPIO.output(Motor1B,GPIO.HIGH)	GPIO.output(Motor1E,GPIO.HIGH)sleep(5)		GPIO.output(Motor1E,GPIO.LOW)def destroy():		GPIO.cleanup()if __name__ == '__main__':    	setup()	try:    		loop()  	except KeyboardInterrupt:		destroy()
