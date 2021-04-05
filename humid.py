@@ -20,7 +20,6 @@ except Exception as e:
 	print("Caught exception connecting device: %s" % str(e))
 	sys.exit()
 
-# Connect and send a datapoint "hello" with value "world" into the cloud as an event of type "greeting" 10 times
 deviceCli.connect()
 
 while True:
