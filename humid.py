@@ -12,6 +12,18 @@ deviceId = "007"
 authMethod = "use-token-auth"
 authToken = "ZnQ8aM)NzY1Zp1XA7V"
 
+try:
+        deviceOptions = {"org": organization, "type": deviceType, "id": deviceId, "auth-method": authMethod, "auth-token": authToken}
+        deviceCli = ibmiotf.device.Client(deviceOptions)#.............................................
+	
+except Exception as e:
+	print("Caught exception connecting device: %s" % str(e))
+	sys.exit()
+
+# Connect and send a datapoint "hello" with value "world" into the cloud as an event of type "greeting" 10 times
+deviceCli.connect()
+
+while True:
 
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
