@@ -1,4 +1,4 @@
-import dht11
+import dht11 as GPIO
 
 import time
 import sys
